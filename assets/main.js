@@ -60,15 +60,14 @@ const calcKalos = () => {
 
     if(gender){ //male
         grundKCAL = (maleConst + (13.7 * weight) + (5* size ) - (6.8 * age)).toFixed(2);
-        grundKJ = (grundKCAL * KJkonstante).toFixed(2);
-        gesamtKCAL = (grundKCAL * action).toFixed(2);
-        gesamtKJ = (gesamtKCAL * KJkonstante).toFixed(2);
+
     } else{ //female
         grundKCAL = (femaleConst + (9.6 * weight) + (1.8 * size ) - (4.7 * age)).toFixed(2);
-        grundKJ = (grundKCAL * KJkonstante).toFixed(2);
-        gesamtKCAL = (grundKCAL * action).toFixed(2);
-        gesamtKJ = (gesamtKCAL * KJkonstante).toFixed(2);
     }
+    
+    grundKJ = (grundKCAL * KJkonstante).toFixed(2);
+    gesamtKCAL = (grundKCAL * action).toFixed(2);
+    gesamtKJ = (gesamtKCAL * KJkonstante).toFixed(2);
 
     outputGrundKCAL.innerHTML = grundKCAL + " KCAL";
     outputGrundKJ.innerHTML = grundKJ + " KJ";
