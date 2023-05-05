@@ -6,7 +6,7 @@
 
 :root{
     --white: #fff;
-    ---black: #000;
+    --black: #000;
     --blue: #add8e6;
     --orange: #E6BBAD;
     --red:#ff285f;
@@ -49,7 +49,7 @@ form{
     min-height: 50vh;
     background-color: var(--blue);
     padding: 1vw;
-    border: 3px groove var(---black);
+    border: 3px groove var(--black);
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ form{
 section{
     display: flex;
     margin-top: 10px;
-    border-top: 1px solid var(---black);
+    border-top: 1px solid var(--black);
 }
 
 article{
@@ -69,7 +69,7 @@ article{
 
 article:last-child{
     text-align: right;
-    border-left: 1px solid var(---black);
+    border-left: 1px solid var(--black);
 }
 
 
