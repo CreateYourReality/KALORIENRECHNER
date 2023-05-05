@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #fff;
+    ---black: #000;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+input{
+    display: block;
+    margin: 5px 0;
+}
+
+input[type="text"]{
+    height: 30px;
+}
+
+input[type="radio"]{
+    display: inline-block;
+    margin: 0 0 5px 0;
+}
+
+select{
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+input[type="submit"]{
+    width: 30%;
+    align-self: end;
+    height: 40px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form{
+    width: 25vw;
+    background-color: lightblue;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vw;
+}

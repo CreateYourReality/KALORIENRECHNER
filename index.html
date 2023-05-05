@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>KALORIENRECHNER - PROJEKT</title>
+</head>
+<body>
+
+    <main>
+        <h1>Kalorien rechner</h1>
+
+        <form onsubmit="calcKalos();return false;">
+            <label for="size">Körpergröße</label>
+            <input type="text" name="size" id="size">
+
+            <label for="age">Alter</label>
+            <input type="text" name="age" id="age">
+
+            <label for="weight">Gewicht</label>
+            <input type="text" name="weight" id="weight">
+        
+            <label for="gender">Geschlecht</label>
+
+            <div>
+                <label for="male">
+                    <input type="radio" name="radioMF" id="male" checked> Männlich
+                </label>
+                <label for="female">
+                    <input type="radio" name="radioMF"> Weiblich
+                </label>
+            </div>
+
+            <select name="actions" id="actions">
+                <option value="0.95">Schlafen</option>
+                <option value="1.2">Nur sitzen oder Liegen</option>
+                <option value="1.5">Wenig oder keine körperliche Aktivität</option>
+                <option value="1.7">Leichte Belastung, zeitweilig gehend</option>
+                <option value="1.9">Mittlere Belastung, überwiegend gehend oder stehend</option>
+                <option value="2.2">Körperlich anstrengende berufliche Arbeit</option>
+              </select>
+        
+              <input type="submit" value="Submit">
+
+              <section>
+                <h2>Grundumsatz</h2>
+                <p class="outputGrundKCAL"></p>
+                <p class="outputGrundKJ"></p>
+
+                <h2>Gesamtumsatz</h2>
+                <p class="outputGesamtKCAL"></p>
+                <p class="outputGesamtKJ"></p>
+              </section>
+        </form>
+    </main>
+    <script type="text/javascript" src="./assets/main.js"></script>
+</body>
+</html>
