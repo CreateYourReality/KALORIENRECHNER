@@ -18,9 +18,11 @@ input{
     margin: 5px 0;
 }
 
-input[type="text"]{
+input[type="text"], input[type="number"]{
     height: 30px;
 }
+
+
 
 input[type="radio"]{
     display: inline-block;

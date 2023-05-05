@@ -15,12 +15,6 @@ const KJkonstante = 4.184;
 
 
 const replaceSymbols = (symbol) => {
-    if(Number(symbol) == NaN){
-        console(symbol);
-        console.log("Das ist keine Zahl!");
-        return;
-    }
-
     if(symbol.includes("."))
         symbol = symbol.replace(".","");
 
@@ -32,12 +26,6 @@ const replaceSymbols = (symbol) => {
 
 
 const replaceKomma = (gewicht) =>{
-    if(Number(gewicht) == NaN){
-        console(gewicht);
-        console.log("Das ist keine Zahl!");
-        return;
-    }
-
     if(gewicht.includes(","))
         gewicht = gewicht.replace(",",".");
 
@@ -47,24 +35,29 @@ const replaceKomma = (gewicht) =>{
 
 const calcKalos = () => {
     let size = replaceSymbols(koerpergroesse.value);
-    let age = alter.value;
+    let age = Number(alter.value);
     let weight = replaceKomma(gewicht.value);
     let gender = true;
     geschlecht.checked ? gender = true : gender = false; //true male
-    let action = aktivitaet.value;
+    let action = Number(aktivitaet.value);
+
+    if(isNaN(size) || isNaN(weight)){
+        outputGrundKCAL.innerHTML = "Bitte gibt gültige Zahlen ein";
+        return;
+    }
 
     let gesamtKCAL;
     let gesamtKJ;
     let grundKCAL;
     let grundKJ;
-
+        
     if(gender){ //male
         grundKCAL = (maleConst + (13.7 * weight) + (5* size ) - (6.8 * age)).toFixed(2);
 
     } else{ //female
         grundKCAL = (femaleConst + (9.6 * weight) + (1.8 * size ) - (4.7 * age)).toFixed(2);
     }
-    
+
     grundKJ = (grundKCAL * KJkonstante).toFixed(2);
     gesamtKCAL = (grundKCAL * action).toFixed(2);
     gesamtKJ = (gesamtKCAL * KJkonstante).toFixed(2);
