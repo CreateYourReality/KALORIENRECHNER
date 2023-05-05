@@ -7,37 +7,107 @@
 :root{
     --white: #fff;
     ---black: #000;
+    --blue: #add8e6;
+    --orange: #E6BBAD;
+    --red:#ff285f;
+
+    --stdSize: clamp(1rem,1.2vw,2rem);
+    --midSize: clamp(1.5rem,1.5vw,2rem);
+    --bigSize: clamp(3rem,3vw,5rem);
 }
 
 html{
     font-size: 62.5%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1{
+    font-size: var(--bigSize);
+}
+
+h2{
+    font-size: var(--midSize);
+    color:var(--red);   
+    margin: 5px 0;
+}
+
+p{
+    font-size: var(--stdSize);
+    font-weight: 900;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 25vw;
+    min-height: 50vh;
+    background-color: var(--blue);
+    padding: 1vw;
+    border: 3px groove var(---black);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section{
+    display: flex;
+    margin-top: 10px;
+    border-top: 1px solid var(---black);
+}
+
+article{
+    width: 50%;
+    text-align: left;
+}
+
+article:last-child{
+    text-align: right;
+    border-left: 1px solid var(---black);
+}
+
+
+select{
+    font-size: var(--stdSize);
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+label{
+    font-size: var(--stdSize);
 }
 
 input{
+    font-weight: 900;
     display: block;
     margin: 5px 0;
 }
 
 input[type="text"], input[type="number"]{
-    height: 30px;
+    font-size: var(--stdSize);
+    height: 35px;
+    padding: 0 .5vw;
 }
 
-
-
 input[type="radio"]{
+    accent-color: var(--orange);
     display: inline-block;
     margin: 0 0 5px 0;
 }
 
-select{
-    margin: 20px 0;
-    border-radius: 15px;
-}
-
 input[type="submit"]{
+    font-size: var(--midSize);
+    background-color: var(--orange);
+    color:var(--white);
     width: 30%;
-    align-self: end;
     height: 40px;
+    align-self: end;
 }
 
 form div{
@@ -45,20 +115,8 @@ form div{
     flex-direction: column;
 }
 
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-form{
-    width: 25vw;
-    background-color: lightblue;
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1vw;
+@media only screen and (max-width: 768px) {
+    form{
+        width: 60vw;
+    }  
 }
