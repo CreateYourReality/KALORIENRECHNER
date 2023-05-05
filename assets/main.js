@@ -14,6 +14,7 @@ const femaleConst = 655.1;
 const KJkonstante = 4.184;
 
 
+//Ersetzt Punkt und Komma in einem String
 const replaceSymbols = (symbol) => {
     if(symbol.includes("."))
         symbol = symbol.replace(".","");
@@ -24,7 +25,7 @@ const replaceSymbols = (symbol) => {
     return Number(symbol);        
 }
 
-
+//Ersetzt ein Komma durch einen Punkt in einem String
 const replaceKomma = (gewicht) =>{
     if(gewicht.includes(","))
         gewicht = gewicht.replace(",",".");
@@ -38,10 +39,10 @@ const calcKalos = () => {
     let age = Number(alter.value);
     let weight = replaceKomma(gewicht.value);
     let gender = true;
-    geschlecht.checked ? gender = true : gender = false; //true male
-    let action = Number(aktivitaet.value);
+    geschlecht.checked ? gender = true : gender = false; //true = checkbox male || false = checkbox female
+    let action = Number(aktivitaet.value); // 0.95 | 1.2 | 1.5 | 1.7 | 1.9 | 2.2
 
-    if(isNaN(size) || isNaN(weight)){
+    if(isNaN(size) || isNaN(weight)){ //wenn size oder weight keine Zahlen sind, brech ab
         outputGrundKCAL.innerHTML = "Bitte gibt gültige Zahlen ein";
         return;
     }
@@ -51,10 +52,10 @@ const calcKalos = () => {
     let grundKCAL;
     let grundKJ;
         
-    if(gender){ //male
+    if(gender){ //checkbox = male
         grundKCAL = (maleConst + (13.7 * weight) + (5* size ) - (6.8 * age)).toFixed(2);
 
-    } else{ //female
+    } else{ //checkbox = female
         grundKCAL = (femaleConst + (9.6 * weight) + (1.8 * size ) - (4.7 * age)).toFixed(2);
     }
 
